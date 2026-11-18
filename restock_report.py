@@ -15,3 +15,13 @@ def find_inventory_total(inventory):
     return total
 
 print(find_inventory_total(inventory))
+
+
+def find_needs_reorder(inventory):
+    products_to_reorder = []
+    for product in inventory:
+        if product["quantity"] <= product["reorder_point"]:
+            products_to_reorder.append(product)
+    return products_to_reorder
+
+print(find_needs_reorder(inventory))
