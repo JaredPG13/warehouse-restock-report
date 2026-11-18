@@ -17,11 +17,21 @@ def find_inventory_total(inventory):
 print(find_inventory_total(inventory))
 
 
-def find_needs_reorder(inventory):
+def find_reorder_products(inventory):
     products_to_reorder = []
     for product in inventory:
         if product["quantity"] <= product["reorder_point"]:
             products_to_reorder.append(product)
     return products_to_reorder
 
-print(find_needs_reorder(inventory))
+print(find_reorder_products(inventory))
+
+
+def find_reorder_items(inventory):
+    items_to_reorder = []
+    for product in inventory:
+        if product["quantity"] <= product["reorder_point"]:
+            items_to_reorder.append(product["item"])
+    return items_to_reorder
+
+print(find_reorder_items(inventory))
