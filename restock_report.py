@@ -7,11 +7,11 @@ inventory = [
     {"item": "Keyboard", "quantity": 25, "reorder_point": 20, "aisle": "E3", "unit_price": 80},
 ]
 
-def find_inventory_value(inventory):
+def find_inventory_total(inventory):
     total = 0
-    for item in inventory:
-        item_total_price = item["quantity"] * item["unit_price"]
+    for product in inventory:
+        item_total_price = product["quantity"] * product["unit_price"]
         total = total + item_total_price
     return total
 
-print(find_inventory_value(inventory))
+print(find_inventory_total(inventory))
