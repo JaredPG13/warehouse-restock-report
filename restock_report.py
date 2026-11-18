@@ -6,3 +6,12 @@ inventory = [
     {"item": "Monitor", "quantity": 20, "reorder_point": 15, "aisle": "E2", "unit_price": 200},
     {"item": "Keyboard", "quantity": 25, "reorder_point": 20, "aisle": "E3", "unit_price": 80},
 ]
+
+def find_inventory_value(inventory):
+    total = 0
+    for item in inventory:
+        item_total_price = item["quantity"] * item["unit_price"]
+        total = total + item_total_price
+    return total
+
+print(find_inventory_value(inventory))
