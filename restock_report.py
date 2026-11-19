@@ -57,3 +57,15 @@ def find_item_aisle(inventory, item_name):
 print(find_item_aisle(inventory, "Packing tape"))
 print(find_item_aisle(inventory, "Keyboard"))
 print(find_item_aisle(inventory, "Pens"))
+
+
+def find_item_total(inventory, item_name):
+    for product in inventory:
+        if product["item"] == item_name:
+            item_total_price = product["quantity"] * product["unit_price"]
+            return item_total_price
+    return "Not found"
+
+print(find_item_total(inventory, "Packing tape"))
+print(find_item_total(inventory, "Keyboard"))
+print(find_item_total(inventory, "Pens"))   
