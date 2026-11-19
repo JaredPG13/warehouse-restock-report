@@ -35,3 +35,14 @@ def find_reorder_items(inventory):
     return items_to_reorder
 
 print(find_reorder_items(inventory))
+
+
+def find_item_quantity(inventory, item_name):
+    for product in inventory:
+        if product["item"] == item_name:
+            return product["quantity"]
+    return "Not found"
+
+print(find_item_quantity(inventory, "Packing tape"))
+print(find_item_quantity(inventory, "Keyboard"))
+print(find_item_quantity(inventory, "Pens"))
