@@ -69,3 +69,9 @@ def find_item_total(inventory, item_name):
 print(find_item_total(inventory, "Packing tape"))
 print(find_item_total(inventory, "Keyboard"))
 print(find_item_total(inventory, "Pens"))   
+
+
+products_to_reorder = find_reorder_products(inventory)
+
+for product in products_to_reorder:
+    print(f"{product['item']}: {product['quantity']} on hand, reorder at {product['reorder_point']}, aisle {product['aisle']}")
